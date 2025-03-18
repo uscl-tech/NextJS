@@ -20,6 +20,10 @@ export default function CryptoComponent() {
     const fetchCryptoData = async () => {
       try {
         setLoading(true)
+
+        // Add a 5-second delay before fetching
+        await new Promise((resolve) => setTimeout(resolve, 5000))
+
         const response = await fetch("/api/crypto")
 
         if (!response.ok) {
@@ -102,7 +106,7 @@ export default function CryptoComponent() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {cryptos.map((crypto, index) => (
+            {cryptos.map((crypto) => (
               <div
                 key={crypto.symbol}
                 className="group relative bg-slate-900/80 backdrop-blur-sm border border-green-900/50 rounded-xl overflow-hidden hover:shadow-[0_0_20px_rgba(0,255,127,0.2)] transition-all duration-300"
