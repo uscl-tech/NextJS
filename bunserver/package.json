@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install",
+    "prepare": "[ -d .git ] && husky install || echo 'Skipping Husky prepare in CI environment'",
     "postinstall": "[ -d .git ] && husky install || echo 'Skipping Husky install in CI environment'"
   },
   "dependencies": {
