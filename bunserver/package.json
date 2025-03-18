@@ -28,3 +28,6 @@
     "husky": "^8.0.0"
   }
 }
+"scripts": {
+  "postinstall": "[ -d .git ] && husky install || echo 'Skipping Husky install in CI environment'"
+}
