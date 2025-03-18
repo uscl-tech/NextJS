@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "[ -d .git ] && husky install || echo 'Skipping Husky install in CI environment'"
   },
   "dependencies": {
     "lucide-react": "^0.482.0",
@@ -27,7 +28,4 @@
     "typescript": "^5",
     "husky": "^8.0.0"
   }
-}
-"scripts": {
-  "postinstall": "[ -d .git ] && husky install || echo 'Skipping Husky install in CI environment'"
 }
